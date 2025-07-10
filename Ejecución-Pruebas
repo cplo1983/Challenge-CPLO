@@ -1,0 +1,52 @@
+Tecnologías sugeridas
+
+    Lenguaje: Python (FastAPI)
+    Base de datos: SQLite (local, simple para pruebas) pero fácilmente migrable a RDS/Aurora en AWS.
+    Contenerización: Docker
+    Autenticación: API Key simple y JWT opcional (punto extra)
+    Logs: Python logging, logs enviados a CloudWatch (si se despliega en AWS).
+    NIST CVE Source: Consulta en tiempo real a la API de NIST.
+
+Estructura de archivos propuesta
+
+    app/main.py — API principal
+    app/models.py — Modelos ORM/DB
+    app/database.py — Inicialización DB
+    app/security.py — Lógica de autenticación/autorización
+    app/nist_client.py — Cliente para consumir la API de NIST
+    app/logging_config.py — Configuración de logs
+    Dockerfile — Imagen para contenerización
+    requirements.txt — Dependencias
+    README.md — Documentación y justificación
+
+Endpoints REST
+1. GET /vulnerabilities/summary
+
+Retorna el listado total de vulnerabilidades sumarizadas por severidad (Critical, High, Medium, Low, etc.) directamente desde NIST, sin precargar la base de datos.
+2. POST /vulnerabilities/remediate
+
+Permite agregar a la base de datos local las vulnerabilidades (por CVE) que ya fueron corregidas (solo si existen en NIST).
+3. GET /vulnerabilities/summary/unremediated
+
+Retorna el listado total de vulnerabilidades sumarizadas por severidad, excepto las que están marcadas como corregidas.
+Extras
+
+    GET /vulnerabilities/remediated — Listar las vulnerabilidades marcadas como corregidas.
+    GET /vulnerabilities/detail/{cve_id} — Obtener detalle de una vulnerabilidad específica.
+
+Autenticación/Autorización
+
+    Implementación de API Key (pasada en x-api-key header).
+    Opcional: JWT para mayor granularidad.
+    Roles: Solo usuarios autenticados pueden remediar vulnerabilidades.
+
+Logs y Trazabilidad
+
+    Loggeo de cada request (endpoint, usuario, timestamp).
+    Loggeo de cambios en estado de vulnerabilidades.
+    Logs enviados a stdout (para Docker), y configurables para CloudWatch en AWS.
+
+Dockerización
+
+    Dockerfile instala dependencias y expone el API en el puerto 80 (FastAPI + Uvicorn).
+    Variables de entorno para configuración de API Key, DB URI, etc.
