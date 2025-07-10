@@ -50,4 +50,4 @@ Incluye scripts en `tests/` para validar endpoints y flujos principales.
 - Auditoría de acceso y modificaciones.
 
 ## Contacto
-Equipo de Seguridad Cloud
+Carlos Ponce de León Ortega
