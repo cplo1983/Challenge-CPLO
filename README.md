@@ -1,4 +1,4 @@
-# MercadoLibre Cloud Security API
+# Cloud Security API
 
 ## Descripción
 API para gestión de vulnerabilidades detectadas en sistemas Cloud, cruzando información con NIST y permitiendo marcar las vulnerabilidades remediadas por equipo.
@@ -50,4 +50,4 @@ Incluye scripts en `tests/` para validar endpoints y flujos principales.
 - Auditoría de acceso y modificaciones.
 
 ## Contacto
-Equipo de Seguridad Cloud - MELI
+Equipo de Seguridad Cloud
