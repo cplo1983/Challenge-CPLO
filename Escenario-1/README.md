@@ -10,6 +10,8 @@ API para gestión de vulnerabilidades detectadas en sistemas Cloud, cruzando inf
 - **Autenticación**: API Key/JWT obligatorio en endpoints de escritura.
 - **Logs**: Integración con CloudWatch y DB para auditoría.
 
+![Diagrama](Diagrama-Infra_AWS.png)
+
 ## Endpoints Propuestos
 
 | Método | Ruta                                      | Objetivo                                                                 |
