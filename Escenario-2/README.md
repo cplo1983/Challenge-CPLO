@@ -1,5 +1,4 @@
-# Gestión de Seguridad en AWS - MercadoLibre
-
+# Gestión de Seguridad en AWS
 Este repositorio contiene la documentación, scripts y configuraciones necesarias para fortalecer la infraestructura en AWS conforme a los marcos CIS y NIST. Incluye hardening de sistemas, gestión de vulnerabilidades y riesgos mediante IA, controles IAM y de red, alta disponibilidad, DRP y estrategias contra vendor lock-in.
 
 ## Estructura
