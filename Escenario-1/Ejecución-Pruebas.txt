@@ -12,8 +12,9 @@ Estructura de archivos propuesta
     app/main.py — API principal
     app/models.py — Modelos ORM/DB
     app/database.py — Inicialización DB
-    app/security.py — Lógica de autenticación/autorización
     app/nist_client.py — Cliente para consumir la API de NIST
+    app/schemas.py — Esquema BD
+    app/auth.py — Lógica de autenticación/autorización
     app/logging_config.py — Configuración de logs
     Dockerfile — Imagen para contenerización
     requirements.txt — Dependencias
